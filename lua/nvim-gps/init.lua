@@ -339,8 +339,8 @@ function M.get_data()
 	local function add_node_data(pos, capture_name, capture_node)
 		local text = ""
 
-		if vim.fn.has("nvim-0.7") > 0 then
-			text = vim.treesitter.query.get_node_text(capture_node, 0)
+		if vim.fn.has("nvim-0.10") == 1 then
+			text = vim.treesitter.get_node_text(capture_node, 0)
 			if text == nil then
 				return data_cache_value
 			end
